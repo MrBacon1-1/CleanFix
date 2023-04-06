@@ -1,12 +1,20 @@
 @echo off
-
-:main
-
 color 2
-title System Repair By MrBacon
-cls
+title CleanFix By MrBacon
 
 mode con: cols=80 lines=30
+
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    goto main
+) else (
+    echo Must be ran with adminisatrator permisions!
+    timeout 5 >null
+    exit
+)
+
+:main
+cls
 
 echo ~CleanFix By MrBacon#7458~
 echo ----------------
