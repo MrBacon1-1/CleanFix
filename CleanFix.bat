@@ -120,8 +120,6 @@ cls
 
 echo [?] Cleaning temporary files...
 
-@REM del /q /s "%TEMP%\*.*" >nul
-
 rd /s /q "%temp%"
 
 FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
