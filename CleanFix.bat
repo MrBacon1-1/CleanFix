@@ -118,7 +118,7 @@ cls
 
 echo [?] Cleaning temporary files...
 
-del /q /s "%TEMP%\*.*"
+del /q /s "%TEMP%\*.*" >nul
 
 cls
 echo [?] Temporary files have been cleaned.
