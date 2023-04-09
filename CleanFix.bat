@@ -77,36 +77,36 @@ cls
 
 echo [?] Fixing IP 1/5
 netsh winsock reset
-timeout 5 >null
+timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 2/5
 netsh int ip reset
-timeout 5 >null
+timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 3/5
 ipconfig /release
-timeout 5 >null
+timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 4/5
 ipconfig /renew
-timeout 5 >null
+timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 5/5
 ipconfig /flushdns
-timeout 5 >null
+timeout 3 >null
 
 cls 
 
 echo [?] Done, Restarting In 5 Seconds
-timeout 10 >null
+timeout 5 >null
 shutdown.exe /r /t 00
 
 REM -------------------------------------------------------------------------------------------------------------------------------------------------------------------
