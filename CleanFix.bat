@@ -76,31 +76,31 @@ pause >null
 cls
 
 echo [?] Fixing IP 1/5
-netsh winsock reset
+netsh winsock reset >nul
 timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 2/5
-netsh int ip reset
+netsh int ip reset >nul
 timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 3/5
-ipconfig /release
+ipconfig /release >nul
 timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 4/5
-ipconfig /renew
+ipconfig /renew >nul
 timeout 3 >null
 
 cls
 
 echo [?] Fixing IP 5/5
-ipconfig /flushdns
+ipconfig /flushdns >nul
 timeout 3 >null
 
 cls 
