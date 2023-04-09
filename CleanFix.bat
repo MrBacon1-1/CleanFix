@@ -4,14 +4,16 @@ title CleanFix By MrBacon
 
 mode con: cols=80 lines=30
 
-net session >nul 2>&1
-if %errorLevel% == 0 (
-    goto main
-) else (
-    echo Must be ran with adminisatrator permisions!
-    timeout 5 >null
-    exit
+if not "%1"=="am_admin" (
+    echo Admin Not Enabled
+    timeout 1 >null
+    echo Requesting Admin
+    powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
+    exit /b
 )
+
+
+echo Admin Enabled
 
 :main
 cls
@@ -118,8 +120,20 @@ cls
 
 echo [?] Cleaning temporary files...
 
-del /q /s "%TEMP%\*.*" >nul
+rd /s /q "%temp%"
 
+FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
+for /F "tokens=*" %%G in ('wevtutil.exe el') DO (call :do_clear "%%G")
+echo.
+goto theEnd
+
+:do_clear
+echo clearing %1
+wevtutil.exe cl %1
+goto :eof
+
+
+:theEnd
 cls
 echo [?] Temporary files have been cleaned.
 timeout 2 >null
