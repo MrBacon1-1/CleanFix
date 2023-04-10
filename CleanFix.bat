@@ -5,15 +5,15 @@ title CleanFix By MrBacon
 mode con: cols=80 lines=30
 
 if not "%1"=="am_admin" (
-    echo Admin Not Enabled
+    echo Checking For Admin Permisions
     timeout 1 >null
-    echo Requesting Admin
     powershell -Command "Start-Process -Verb RunAs -FilePath '%0' -ArgumentList 'am_admin'"
     exit /b
 )
 
 
 echo Admin Enabled
+timeout 1 >null
 
 :main
 cls
@@ -39,7 +39,7 @@ REM ----------------------------------------------------------------------------
 :cfile
 cls
 
-echo [?] Press Enter To Begin (Restart At The End)
+echo [?] Press Enter To Begin (Restart At The End) [?]
 pause >null
 cls
 
@@ -73,7 +73,7 @@ REM ----------------------------------------------------------------------------
 :ipfix
 cls
 
-echo [?] Press Enter To Begin (Restart At The End)
+echo [?] Press Enter To Begin (Restart At The End) [?]
 pause >null
 cls
 
@@ -117,6 +117,9 @@ REM ----------------------------------------------------------------------------
 
 :temp
 cls
+
+echo [?] Press Enter To Start [?]
+pause >null
 
 echo [?] Cleaning temporary files...
 
