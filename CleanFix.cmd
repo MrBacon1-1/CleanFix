@@ -28,17 +28,18 @@ echo:             [3] Clean Temp Files
 echo:             __________________________________________________      
 echo:
 echo:             [4] Extras
-echo:             [0] Exit
+echo:             [5] Exit
 echo:       ______________________________________________________________
 echo:
 
-set /p opt="        CleanFix: "
+choice /C:12345 /N
+set _erl=%errorlevel%
 
-if %opt% == 1 goto system
-if %opt% == 2 goto ipfix
-if %opt% == 3 goto temp
-if %opt% == 4 goto extras
-if %opt% == 0 exit /b
+if %_erl%==5 exit /b
+if %_erl%==4 goto extras
+if %_erl%==3 goto temp
+if %_erl%==2 goto ipfix
+if %_erl%==1 goto system
 
 goto main
 
