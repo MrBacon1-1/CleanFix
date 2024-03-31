@@ -11,7 +11,7 @@ if not "%1"=="am_admin" (
 cls
 
 color 3
-title CleanFix v1.0.0 - By MrBacon
+title CleanFix v1.0.1 - By MrBacon
 mode 76, 30
 
 echo:
@@ -20,7 +20,7 @@ echo:
 echo:
 echo:       ______________________________________________________________
 echo:
-echo:                            ~ CleanFix v1.0.0 ~                       
+echo:                            ~ CleanFix v1.0.1 ~                       
 echo:
 echo:             [1] Currupted File Check / System Repair       
 echo:             [2] Fix IP / Reset IP      
