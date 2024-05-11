@@ -55,19 +55,19 @@ pause >nul
 cls
 
 echo [CleanFix] Checking For Corrupted Files (1/3)
-dism.exe /online /cleanup-image /restorehealth >nul 2>&1
+dism.exe /online /cleanup-image /restorehealth
 timeout 2 >nul
 
 cls
 
 echo [CleanFix] Checking For Corrupted Files (2/3)
-dism.exe /online /cleanup-image /scanhealth >nul 2>&1
+dism.exe /online /cleanup-image /scanhealth
 timeout 2 >nul
 
 cls
 
 echo [CleanFix] Checking For Corrupted Files (3/3)
-SFC /scannow >nul 2>&1
+SFC /scannow
 
 cls
 
